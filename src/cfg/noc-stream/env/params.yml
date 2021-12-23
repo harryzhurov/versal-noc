@@ -1,0 +1,12 @@
+
+import : clk
+
+parameters:
+    VERBOSE      : 1
+    BASE_CLK     : = clk.MAIN_CLK
+    WIDTH        : 4
+    FIFO_DEPTH   : 32
+    BASE_ADDRESS : 64'h0000_0201_0000_0010
+    DATA_WIDTH   : 64
+
+    

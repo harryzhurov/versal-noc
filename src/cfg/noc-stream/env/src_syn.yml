@@ -1,0 +1,6 @@
+
+sources:
+    - src/syn/top_noc.sv
+    - src/syn/axi_ntt.sv
+    - src/syn/axi_ntt.v
+

@@ -1,0 +1,9 @@
+
+parameters:
+    VARIANT_NAME   : noc-stream
+    PROJECT_NAME   : noc-slon
+    TOP_NAME       : top_noc
+    TESTBENCH_NAME : top_noc_tb
+    DEVICE         : xcvm1802-vsva2197-2MP-e-S
+
+

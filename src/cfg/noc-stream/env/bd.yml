@@ -1,0 +1,5 @@
+
+sources:
+#   - src/cfg/noc-stream/bd/cips.tcl
+#   - src/cfg/noc-stream/bd/noc_slon.tcl
+    - src/cfg/noc-stream/bd/noc_common.tcl

@@ -1,0 +1,173 @@
+<!DOCTYPE Project SYSTEM "http://www.slickedit.com/dtd/vse/10.0/vpj.dtd">
+<Project
+    Version="10.0"
+    VendorName="SlickEdit"
+    WorkingDir=".">
+    <Config
+        Name="noc-stream"
+        OutputFile=""
+        CompilerConfigName="Latest Version">
+        <Menu>
+            <Target
+                Name="Compile"
+                CaptureOutputWith="ProcessBuffer"
+                SaveOption="SaveAll"
+                ClearProcessBuffer="1"
+                RunFromDir="%rw"
+                MenuCaption="Compile Simulator Project">
+                <Exec CmdLine="etime.sh scons -s variant=%bn wlib"/>
+            </Target>
+            <Target
+                Name="Build"
+                CaptureOutputWith="ProcessBuffer"
+                SaveOption="SaveAll"
+                ClearProcessBuffer="1"
+                MenuCaption="&amp;Build Vivado Project"
+                Verbose="1"
+                RunFromDir="%rw">
+                <Exec CmdLine="etime.sh scons -s variant=%bn prjimpl"/>
+            </Target>
+            <Target
+                Name="Rebuild"
+                CaptureOutputWith="ProcessBuffer"
+                SaveOption="SaveAll"
+                ClearProcessBuffer="1"
+                Verbose="1"
+                RunFromDir="%rw/cfg/xilinx_7A35T">
+                <Exec CmdLine="make clean all"/>
+            </Target>
+            <Target
+                Name="Debug"
+                MenuCaption="&amp;Debug"
+                SaveOption="SaveNone"
+                RunInXterm="1"
+                RunFromDir="%rw">
+                <Exec CmdLine="scons -s variant=%bn qs_gui"/>
+            </Target>
+            <Target
+                Name="Sim Run"
+                MenuCaption="Sim &amp;Run"
+                RunFromDir="%rw"
+                CaptureOutputWith="ProcessBuffer"
+                SaveOption="SaveAll"
+                ClearProcessBuffer="1">
+                <Exec CmdLine="etime.sh scons -s variant=%bn qs_run"/>
+            </Target>
+            <Target
+                Name="Create Vivado Project"
+                MenuCaption="Create &amp;Vivado Project"
+                RunFromDir="%rw"
+                CaptureOutputWith="ProcessBuffer"
+                SaveOption="SaveAll"
+                ClearProcessBuffer="1">
+                <Exec CmdLine="etime.sh scons -s variant=%bn prj"/>
+            </Target>
+            <Target
+                Name="Open Vivado Project"
+                MenuCaption="&amp;Open Vivado Project"
+                RunFromDir="%rw"
+                CaptureOutputWith="ProcessBuffer"
+                SaveOption="SaveAll"
+                ClearProcessBuffer="1">
+                <Exec CmdLine="etime.sh scons -s variant=%bn prjopen &amp; disown"/>
+            </Target>
+        </Menu>
+    </Config>
+    <Config
+        Name="noc-ddr"
+        OutputFile=""
+        CompilerConfigName="Latest Version">
+        <Menu>
+            <Target
+                Name="Compile"
+                CaptureOutputWith="ProcessBuffer"
+                SaveOption="SaveAll"
+                ClearProcessBuffer="1"
+                RunFromDir="%rw"
+                MenuCaption="Compile Simulator Project">
+                <Exec CmdLine="etime.sh scons -s variant=%bn wlib"/>
+            </Target>
+            <Target
+                Name="Build"
+                CaptureOutputWith="ProcessBuffer"
+                SaveOption="SaveAll"
+                ClearProcessBuffer="1"
+                MenuCaption="&amp;Build Vivado Project"
+                Verbose="1"
+                RunFromDir="%rw">
+                <Exec CmdLine="etime.sh scons -s variant=%bn prjimpl"/>
+            </Target>
+            <Target
+                Name="Rebuild"
+                CaptureOutputWith="ProcessBuffer"
+                SaveOption="SaveAll"
+                ClearProcessBuffer="1"
+                Verbose="1"
+                RunFromDir="%rw/cfg/xilinx_7A35T">
+                <Exec CmdLine="make clean all"/>
+            </Target>
+            <Target
+                Name="Debug"
+                MenuCaption="&amp;Debug"
+                SaveOption="SaveNone"
+                RunInXterm="1"
+                RunFromDir="%rw">
+                <Exec CmdLine="scons -s variant=%bn qs_gui"/>
+            </Target>
+            <Target
+                Name="Sim Run"
+                MenuCaption="Sim &amp;Run"
+                RunFromDir="%rw"
+                CaptureOutputWith="ProcessBuffer"
+                SaveOption="SaveAll"
+                ClearProcessBuffer="1">
+                <Exec CmdLine="etime.sh scons -s variant=%bn qs_run"/>
+            </Target>
+            <Target
+                Name="Create Vivado Project"
+                MenuCaption="Create &amp;Vivado Project"
+                RunFromDir="%rw"
+                CaptureOutputWith="ProcessBuffer"
+                SaveOption="SaveAll"
+                ClearProcessBuffer="1">
+                <Exec CmdLine="etime.sh scons -s variant=%bn prj"/>
+            </Target>
+            <Target
+                Name="Open Vivado Project"
+                MenuCaption="&amp;Open Vivado Project"
+                RunFromDir="%rw"
+                CaptureOutputWith="ProcessBuffer"
+                SaveOption="SaveAll"
+                ClearProcessBuffer="1">
+                <Exec CmdLine="etime.sh scons -s variant=%bn prjopen &amp; disown"/>
+            </Target>
+        </Menu>
+    </Config>
+    <CustomFolders></CustomFolders>
+    <Files AutoFolders="DirectoryView">
+        <Folder Name="lib">
+            <F
+                N="lib/*.*"
+                Recurse="1"
+                Excludes="build/*.gen*"
+                L="1"/>
+        </Folder>
+        <Folder Name="site_scons">
+            <F
+                N="site_scons/*.*"
+                Recurse="1"
+                Excludes="build/*.gen*"
+                L="1"/>
+        </Folder>
+        <Folder Name="src">
+            <F
+                N="src/*.*"
+                Recurse="1"
+                Excludes="build/*.gen*"
+                L="1"/>
+        </Folder>
+        <F N="SConstruct"/>
+    </Files>
+    <List Name="RTE">
+    </List>
+</Project>

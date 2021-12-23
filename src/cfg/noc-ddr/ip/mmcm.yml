@@ -1,0 +1,39 @@
+
+import : clk
+
+type  : clk_wizard
+
+config:
+
+     PRIMITIVE_TYPE                 : MMCM
+     USE_SAFE_CLOCK_STARTUP         : false
+     USE_RESET                      : false
+     USE_LOCKED                     : true
+     PRIM_SOURCE                    : No_buffer
+     PRIM_IN_FREQ                   : = clk.REF_CLK
+
+     # Outputs                         1                 2      3      4      5      6      7
+     CLKOUT_USED                    : true           #, false, false, false, false, false, false
+     CLKOUT_REQUESTED_OUT_FREQUENCY : = clk.MAIN_CLK #,  100,   100,   100,   100,   100,   100
+     CLKOUT_DRIVES                  : BUFG           #,  BUFG,  BUFG,  BUFG,  BUFG,  BUFG,  BUFG
+
+
+#   PRIMITIVE_TYPE             : MMCM
+#   PRIM_IN_FREQ               : = clk.REF_CLK
+#   CLKOUT1_REQUESTED_OUT_FREQ : = clk.MAIN_CLK
+#   USE_LOCKED                 : true
+#   USE_RESET                  : false
+#   PRIM_SOURCE                : No_buffer
+#   USE_SAFE_CLOCK_STARTUP     : true
+
+
+#CLKOUT_USED {true,false,false,false,false,false,false}
+#CLKOUT_PORT {clk_out1,clk_out2,clk_out3,clk_out4,clk_out5,clk_out6,clk_out7}
+#CLKOUT_REQUESTED_OUT_FREQUENCY {125.000,100.000,100.000,100.000,100.000,100.000,100.000}
+#CLKOUT_REQUESTED_PHASE {0.000,0.000,0.000,0.000,0.000,0.000,0.000}
+#CLKOUT_REQUESTED_DUTY_CYCLE {50.000,50.000,50.000,50.000,50.000,50.000,50.000}
+#CLKOUT_DRIVES {BUFG,BUFG,BUFG,BUFG,BUFG,BUFG,BUFG}
+#CLKOUT_GROUPING {Auto,Auto,Auto,Auto,Auto,Auto,Auto}
+#CLKOUT_DYN_PS {None,None,None,None,None,None,None}
+#CLKOUT_MATCHED_ROUTING {false,false,false,false,false,false,false}
+

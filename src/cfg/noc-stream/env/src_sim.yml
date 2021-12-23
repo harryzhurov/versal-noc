@@ -1,0 +1,6 @@
+
+usedin: sim
+
+sources:
+    - src/sim/top_noc_tb.sv
+
