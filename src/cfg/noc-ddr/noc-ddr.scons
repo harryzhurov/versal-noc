@@ -54,10 +54,9 @@ envx['DEVICE']              = cfg.DEVICE
 envx['SETTINGS_SEARCH_PATH'] = [dirs.SETTINGS]                               # dir for settings files (typically *.yml)
 envx['INC_PATH']             = [envx['BUILD_SRC_PATH']] + get_dirs(src_syn) + [dirs.LIB]
 envx['SIM_INC_PATH']         = envx['INC_PATH']
-#envx['BD_SIM_PATH']          = dirs.BD_SIM
 
 envx.Append(VLOG_FLAGS = ' -O5 -timescale=1ns/1ps')
-envx.Append(VOPT_FLAGS = ' -O5 -L wlib -L unifast_ver -L unisims_ver -L unimacro_ver -L secureip -L xpmlib')
+envx.Append(VOPT_FLAGS = ' +acc=npr -O5 -L wlib -L unifast_ver -L unisims_ver -L unimacro_ver -L secureip -L xpmlib')
 envx.Append(VOPT_FILTER_RULES = '\*\* Warning.+\.gen\/sources_1\/bd.+\:\s\(vopt-2718\)')
 envx.Append(VOPT_FILTER_RULES = '\*\* Warning.+\.gen\/sources_1\/bd.+\:\s\(vopt-2697\)')
 envx.Append(VOPT_FILTER_RULES = '\*\* Warning.+\.gen\/sources_1\/bd.+\:\s\(vopt-2685\)')
