@@ -112,7 +112,7 @@ set axi_noc_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_noc:1.0 axi_noc_
 set_property -dict [ list \
     CONFIG.LOGO_FILE                   {data/noc_mc.png}       \
     CONFIG.CONTROLLERTYPE              {DDR4_SDRAM}            \
-    CONFIG.MC_EN_INTR_RESP             {false}                  \
+    CONFIG.MC_EN_INTR_RESP             {true}                  \
     CONFIG.NUM_CLKS                    {1}                     \
     CONFIG.NUM_MC                      {1}                     \
     CONFIG.NUM_MCP                     {1}                     \
