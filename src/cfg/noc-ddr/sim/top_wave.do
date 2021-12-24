@@ -76,9 +76,27 @@ add wave -noupdate /top_ddrmc_tb/top_inst/top_ddrmc_i/axi_nttw/axi_ntt/rready
 add wave -noupdate /top_ddrmc_tb/top_inst/top_ddrmc_i/axi_nttw/axi_ntt/rdata
 add wave -noupdate /top_ddrmc_tb/top_inst/top_ddrmc_i/axi_nttw/axi_ntt/rlast
 add wave -noupdate -divider {DDRMC Responder}
+add wave -noupdate {/top_ddrmc_tb/top_inst/top_ddrmc_i/noc_slon/noc_slon_i/axi_noc_0/inst/MC0_ddrc/inst/noc_ddr4_phy/inst/channel[0]/u_ddr_responder/ddr4_adr}
+add wave -noupdate {/top_ddrmc_tb/top_inst/top_ddrmc_i/noc_slon/noc_slon_i/axi_noc_0/inst/MC0_ddrc/inst/noc_ddr4_phy/inst/channel[0]/u_ddr_responder/ddr4_bg}
+add wave -noupdate {/top_ddrmc_tb/top_inst/top_ddrmc_i/noc_slon/noc_slon_i/axi_noc_0/inst/MC0_ddrc/inst/noc_ddr4_phy/inst/channel[0]/u_ddr_responder/ddr4_ba}
+add wave -noupdate {/top_ddrmc_tb/top_inst/top_ddrmc_i/noc_slon/noc_slon_i/axi_noc_0/inst/MC0_ddrc/inst/noc_ddr4_phy/inst/channel[0]/u_ddr_responder/ddr4_cke}
+add wave -noupdate {/top_ddrmc_tb/top_inst/top_ddrmc_i/noc_slon/noc_slon_i/axi_noc_0/inst/MC0_ddrc/inst/noc_ddr4_phy/inst/channel[0]/u_ddr_responder/ddr4_ck_t}
+add wave -noupdate {/top_ddrmc_tb/top_inst/top_ddrmc_i/noc_slon/noc_slon_i/axi_noc_0/inst/MC0_ddrc/inst/noc_ddr4_phy/inst/channel[0]/u_ddr_responder/ddr4_ck_c}
+add wave -noupdate {/top_ddrmc_tb/top_inst/top_ddrmc_i/noc_slon/noc_slon_i/axi_noc_0/inst/MC0_ddrc/inst/noc_ddr4_phy/inst/channel[0]/u_ddr_responder/ddr4_cs_n}
+add wave -noupdate {/top_ddrmc_tb/top_inst/top_ddrmc_i/noc_slon/noc_slon_i/axi_noc_0/inst/MC0_ddrc/inst/noc_ddr4_phy/inst/channel[0]/u_ddr_responder/ddr4_dm_dbi_n}
+add wave -noupdate {/top_ddrmc_tb/top_inst/top_ddrmc_i/noc_slon/noc_slon_i/axi_noc_0/inst/MC0_ddrc/inst/noc_ddr4_phy/inst/channel[0]/u_ddr_responder/ddr4_dq}
+add wave -noupdate {/top_ddrmc_tb/top_inst/top_ddrmc_i/noc_slon/noc_slon_i/axi_noc_0/inst/MC0_ddrc/inst/noc_ddr4_phy/inst/channel[0]/u_ddr_responder/ddr4_dqs_c}
+add wave -noupdate {/top_ddrmc_tb/top_inst/top_ddrmc_i/noc_slon/noc_slon_i/axi_noc_0/inst/MC0_ddrc/inst/noc_ddr4_phy/inst/channel[0]/u_ddr_responder/ddr4_dqs_t}
+add wave -noupdate {/top_ddrmc_tb/top_inst/top_ddrmc_i/noc_slon/noc_slon_i/axi_noc_0/inst/MC0_ddrc/inst/noc_ddr4_phy/inst/channel[0]/u_ddr_responder/ddr4_odt}
+add wave -noupdate {/top_ddrmc_tb/top_inst/top_ddrmc_i/noc_slon/noc_slon_i/axi_noc_0/inst/MC0_ddrc/inst/noc_ddr4_phy/inst/channel[0]/u_ddr_responder/ddr4_reset_n}
+add wave -noupdate {/top_ddrmc_tb/top_inst/top_ddrmc_i/noc_slon/noc_slon_i/axi_noc_0/inst/MC0_ddrc/inst/noc_ddr4_phy/inst/channel[0]/u_ddr_responder/ddr4_act_n}
 add wave -noupdate -divider {New Divider}
+add wave -noupdate /top_ddrmc_tb/top_inst/top_ddrmc_i/noc_slon/noc_slon_i/axi_noc_0/inst/MC0_ddrc/noc2dmc_valid_in_0
+add wave -noupdate /top_ddrmc_tb/top_inst/top_ddrmc_i/noc_slon/noc_slon_i/axi_noc_0/inst/MC0_ddrc/noc2dmc_data_in_0
+add wave -noupdate /top_ddrmc_tb/top_inst/top_ddrmc_i/noc_slon/noc_slon_i/axi_noc_0/inst/MC0_ddrc/noc2dmc_credit_rdy_0
+add wave -noupdate /top_ddrmc_tb/top_inst/top_ddrmc_i/noc_slon/noc_slon_i/axi_noc_0/inst/MC0_ddrc/dmc2noc_credit_rtn_0
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {1017536 ps} 0} {{Cursor 2} {4196926 ps} 0}
+WaveRestoreCursors {{Cursor 1} {2423211 ps} 0} {{Cursor 2} {4196926 ps} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 295
 configure wave -valuecolwidth 182
@@ -94,4 +112,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {970884 ps} {1194116 ps}
+WaveRestoreZoom {0 ps} {7143424 ps}
