@@ -15,8 +15,8 @@
 //
 module axi_nttw_m
 #(
-    parameter  DATA_W  = 64,
-    localparam WSTRB_W = DATA_W/8
+    parameter  DATA_W  = 512,
+    localparam WSTRB_W = 64
 )
     
 (
@@ -24,7 +24,7 @@ module axi_nttw_m
     input  wire                 aresetn,
     
     input  wire                 start,
-    output wire [        1:0]   out,
+    output wire [        1:0]   nttw_out,
                         
     output wire [        0:0]   awvalid,
     input  wire [        0:0]   awready,
@@ -111,7 +111,7 @@ axi_ntt
     .clk     ( aclk     ),
     .rst     ( aresetn  ),
     .start   ( start    ),
-    .out     ( out      ),
+    .out     ( nttw_out ),
     .awvalid ( awvalid  ),
     .awready ( awready  ),
     .awaddr  ( awaddr   ),

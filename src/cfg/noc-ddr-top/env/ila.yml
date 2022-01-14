@@ -1,0 +1,9 @@
+
+options:
+    suffix        : _ILA 
+
+parameters:
+    USE            : 0
+  #  AXI_NTT_ENABLE : 1
+
+

@@ -1,0 +1,6 @@
+
+usedin: sim
+
+sources:
+    - src/sim/top_ddrmc_bd_top_tb.sv
+

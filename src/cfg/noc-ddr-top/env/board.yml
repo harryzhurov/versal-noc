@@ -1,0 +1,6 @@
+
+parameters:
+    PMC_REF_FREQ  : 33.33333333    # MHz 
+    DDR4_FREQ     : 200            # MHz              
+
+
