@@ -1,0 +1,9 @@
+
+parameters:
+    VARIANT_NAME   : noc-ddr-top
+    PROJECT_NAME   : noc-slon
+    TOP_NAME       : axi_nttw_m
+    TESTBENCH_NAME : top_ddrmc_bd_top_tb
+    DEVICE         : xcvm1802-vsva2197-2MP-e-S
+
+

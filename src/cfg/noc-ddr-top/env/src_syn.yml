@@ -1,0 +1,9 @@
+
+sources:
+   # - src/syn/top_ddrmc.sv
+    - src/syn/axi_ntt.sv
+    - src/syn/axi_ntt.v
+    - build/noc-ddr-top/src/cfg_params.svh
+    - lib/common.pkg
+    - lib/common.svh
+

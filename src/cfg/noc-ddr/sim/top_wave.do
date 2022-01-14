@@ -50,11 +50,18 @@ radix define DDR4_CMD {
     -defaultcolor #008080
 }
 quietly WaveActivateNextPane {} 0
+add wave -noupdate /top_ddrmc_tb/top_inst/top_ddrmc_i/axi_nttw/axi_ntt/mfsm
+add wave -noupdate -radix unsigned -radixshowbase 0 /top_ddrmc_tb/top_inst/top_ddrmc_i/axi_nttw/axi_ntt/count
+add wave -noupdate /top_ddrmc_tb/top_inst/top_ddrmc_i/axi_nttw/axi_ntt/dcnt
+add wave -noupdate /top_ddrmc_tb/top_inst/top_ddrmc_i/axi_nttw/axi_ntt/data
 add wave -noupdate -divider AW
 add wave -noupdate /top_ddrmc_tb/top_inst/top_ddrmc_i/axi_nttw/axi_ntt/awvalid
 add wave -noupdate /top_ddrmc_tb/top_inst/top_ddrmc_i/axi_nttw/axi_ntt/awready
 add wave -noupdate /top_ddrmc_tb/top_inst/top_ddrmc_i/axi_nttw/axi_ntt/awaddr
 add wave -noupdate /top_ddrmc_tb/top_inst/top_ddrmc_i/axi_nttw/axi_ntt/awlen
+add wave -noupdate /top_ddrmc_tb/top_inst/top_ddrmc_i/axi_nttw/axi_ntt/awsize
+add wave -noupdate /top_ddrmc_tb/top_inst/top_ddrmc_i/axi_nttw/axi_ntt/awburst
+add wave -noupdate /top_ddrmc_tb/top_inst/top_ddrmc_i/axi_nttw/axi_ntt/awcache
 add wave -noupdate -divider W
 add wave -noupdate /top_ddrmc_tb/top_inst/top_ddrmc_i/axi_nttw/axi_ntt/wvalid
 add wave -noupdate /top_ddrmc_tb/top_inst/top_ddrmc_i/axi_nttw/axi_ntt/wready
@@ -96,7 +103,7 @@ add wave -noupdate /top_ddrmc_tb/top_inst/top_ddrmc_i/noc_slon/noc_slon_i/axi_no
 add wave -noupdate /top_ddrmc_tb/top_inst/top_ddrmc_i/noc_slon/noc_slon_i/axi_noc_0/inst/MC0_ddrc/noc2dmc_credit_rdy_0
 add wave -noupdate /top_ddrmc_tb/top_inst/top_ddrmc_i/noc_slon/noc_slon_i/axi_noc_0/inst/MC0_ddrc/dmc2noc_credit_rtn_0
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {2423211 ps} 0} {{Cursor 2} {4196926 ps} 0}
+WaveRestoreCursors {{Cursor 1} {4158499 ps} 0} {{Cursor 2} {4196926 ps} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 295
 configure wave -valuecolwidth 182
@@ -112,4 +119,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {0 ps} {7143424 ps}
+WaveRestoreZoom {4102691 ps} {4214307 ps}

@@ -1,0 +1,3 @@
+
+sources:
+    - src/cfg/noc-ddr-top/bd/noc_common.tcl

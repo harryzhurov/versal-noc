@@ -1,0 +1,3 @@
+
+sources:
+    - src/cfg/noc-ddr/script/xpr_hook.tcl
