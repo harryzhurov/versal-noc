@@ -80,7 +80,8 @@ module automatic axi_noc_transaction_tester_m
 //    Settings
 //
 localparam MAX_COUNT   = 256;
-localparam COUNT       = 200;
+localparam INIT_COUNT  = 0;
+localparam COUNT       = 64;
 localparam MAX_COUNT_W = $clog2(MAX_COUNT);
 
 //localparam BASE_ADDR = 64'h0000_0201_0000_0010;
@@ -101,6 +102,15 @@ typedef enum logic [1:0]
 }
 axburst_t;
 
+typedef enum logic [3:0]
+{
+    AXCACHE_DEV_NONBUF           = 4'b0000,
+    AXCACHE_DEV_BUF              = 4'b0001,
+    AXCACHE_NORM_NONCACHE_NONBUF = 4'b0010,
+    AXCACHE_NORM_NONCACHE_BUF    = 4'b0011
+}
+axcache_t;
+
 typedef logic [MAX_COUNT_W-1:0] data_counter_t;
 
 typedef enum logic [1:0]
@@ -120,6 +130,7 @@ mode_fsm_t     mfsm        = mfsmWRITE_INIT;
 mode_fsm_t     mfsm_next;
 data_counter_t dcnt        = 0;
 data_counter_t data        = 0;
+data_counter_t count       = INIT_COUNT;
 
 //logic start = 0;
 //
@@ -212,7 +223,8 @@ always_comb begin
     //--------------------------------------------
     mfsmWRITE_DATA: begin
         if(wready) begin
-            if(dcnt == COUNT-1) begin
+            //if(dcnt == COUNT-1) begin
+            if(dcnt == count) begin
                 next = mfsmREAD_INIT;
             end
         end
@@ -226,7 +238,8 @@ always_comb begin
     //--------------------------------------------
     mfsmREAD_DATA: begin
         if(rvalid && rlast) begin
-            if(dcnt == COUNT-1) begin
+            //if(dcnt == COUNT-1) begin
+            if(dcnt == count) begin
                 next = mfsmWRITE_INIT;
             end
         end
@@ -237,16 +250,25 @@ always_comb begin
     mfsm_next = next;
 end
 
+always_ff @(posedge clk) begin
+    if(mfsm == mfsmREAD_DATA && mfsm_next == mfsmWRITE_INIT) begin
+        count <= count + 1;
+        if(count == COUNT-1) begin
+            count <= INIT_COUNT;
+        end
+    end
+end
+
 always_comb begin
 
     data     = dcnt + 16;
 
     awvalid  = 0;
     awaddr   = BASE_ADDR;
-    awlen    = COUNT-1;
+    awlen    = count; // COUNT-1;
 
     awburst  = AXBURST_INCR;
-    awcache  = 0;
+    awcache  = AXCACHE_NORM_NONCACHE_BUF;
     awid     = 0;
     awlock   = 0;
     awprot   = 0;
@@ -265,9 +287,9 @@ always_comb begin
     arvalid  = 0;
     araddr   = BASE_ADDR;
     arburst  = AXBURST_INCR;
-    arcache  = 0;
+    arcache  = AXCACHE_NORM_NONCACHE_BUF;
     arid     = 0;
-    arlen    = COUNT-1;
+    arlen    = count; // COUNT-1;
     arlock   = 0;
     arprot   = 0;
     arqos    = 0;
