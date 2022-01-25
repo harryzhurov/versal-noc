@@ -1,4 +1,4 @@
 
 sources:
-    - src/cfg/noc-ddr/xdc/vmk180.xdc
-    - src/cfg/noc-ddr/xdc/ddrmc0.xdc
+    - xdc/vmk180.xdc
+    - xdc/ddrmc0.xdc

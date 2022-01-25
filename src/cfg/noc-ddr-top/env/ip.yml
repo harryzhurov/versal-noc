@@ -2,4 +2,4 @@
 import : main
 
 sources:
-    - src/cfg/noc-stream/ip/mmcm.yml
+    - ip/mmcm.yml
