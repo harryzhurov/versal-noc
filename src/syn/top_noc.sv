@@ -183,7 +183,7 @@ axi_nttw
     .aclk     ( aclk         ),
     .aresetn  ( aresetn      ),
     .start    ( start        ),
-    .out      ( out[1:0]     ),
+    .nttw_out ( out[1:0]     ),
     .awvalid  ( AXI_awvalid  ),
     .awready  ( AXI_awready  ),
     .awaddr   ( AXI_awaddr   ),
