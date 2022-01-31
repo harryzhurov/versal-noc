@@ -114,7 +114,7 @@ OpenVivadoProject  = envx.LaunchOpenVivadoProject(VivadoProject)
 #   explicit dependencies and directives
 Depends(WLib,               [SimLib, CfgParamsHeader, VivadoProject])
 Depends(LaunchQuestaRun,    WLib)
-Depends(VivadoProject,      [EnvTcl, CfgParamsTcl, ImplEnvTcl])
+Depends(VivadoProject,      [EnvTcl, CfgParamsHeader, CfgParamsTcl, ImplEnvTcl])
 Depends(SynthVivadoProject, [CfgParamsHeader])
 Depends(ImplVivadoProject,  prj_impl_deps)
 Depends(OpenVivadoProject,  [IP_OOC_Syn, CfgParamsHeader])
